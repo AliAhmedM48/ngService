@@ -1,0 +1,22 @@
+<header>
+    <mat-toolbar class="bg-primary">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <span>My App</span>
+                <ul class="list-unstyled d-flex gap-3  m-0">
+                    @for (item of navList; track $index) {
+                    <li>
+                        <a mat-flat-button color="accent" class="text-uppercase text-black" routerLink="{{item.path}}"
+                            routerLinkActive="bg-white" [routerLinkActiveOptions]="{exact:true}">{{item.name}}</a>
+                    </li>
+                    }
+                    <li>
+                        <a mat-flat-button color="accent" matBadge="{{usersQuantity}}" matBadgeColor="primary"
+                            class="text-uppercase text-black" routerLink="users" routerLinkActive="bg-white"
+                            [routerLinkActiveOptions]="{exact:true}">users</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </mat-toolbar>
+</header>

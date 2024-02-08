@@ -1,0 +1,44 @@
+<p class="text-center fw-bold text-uppercase py-3">screen works!</p>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <table
+                    class="table table-bordered table-primary border-primary table-striped   rounded-4 overflow-hidden text-center ">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (user of DataFromApp; track $index) {
+                        <tr>
+                            <th>{{$index +1}}</th>
+                            <td>{{user.username}}</td>
+                            <td>{{user.age}}</td>
+                        </tr>
+                        }
+                        @empty {
+                        <tr>
+                            <td colspan="3" rowspan="3">No data</td>
+                        </tr>
+                        }
+
+                        <!-- 
+                        <tr>
+                            <td>Ali</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>Ali</td>
+                            <td>26</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

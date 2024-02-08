@@ -1,0 +1,31 @@
+<p class="text-center fw-bold text-uppercase py-3">form works!</p>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class=" form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Username"
+                        [(ngModel)]="username">
+                    <label for="floatingInput">Username</label>
+                    @if (username&& username.length < 3) { <div class="invalid-feedback d-block ms-3"> Username length
+                        must be >= 3
+                </div>
+                }
+            </div>
+
+
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Age" [(ngModel)]="age">
+                <label for="floatingPassword">Age</label>
+                @if (age && (+age < 20||+age>30)) { <div class="invalid-feedback d-block ms-3"> Age must be within (20 :
+                        30)
+                    </div>
+                    }
+            </div>
+
+            <button (click)="addUser()" class="btn btn-primary mt-3">Submit</button>
+        </div>
+    </div>
+    </div>
+</section>

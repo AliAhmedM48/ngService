@@ -1,0 +1,30 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <table class="table table-bordered text-center table-light table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Age</th>
+                            <th>Address</th>
+                        </tr>
+                        @for (item of usersList; track $index) {
+                        <tr>
+                            <td>{{item.username}}</td>
+                            <td>{{item.age}}</td>
+                            <td>{{item.address}}</td>
+                        </tr>
+                        }
+                        @empty {
+                        <tr>
+                            <td colspan="3">No data</td>
+                        </tr>
+                        }
+
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

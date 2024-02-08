@@ -1,0 +1,83 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mx-auto mt-5">
+                <form (submit)="onSubmit()" [formGroup]="regValidation" class="form">
+                    <div class="form-floating mb-3">
+                        <input formControlName="username" type="text" class="form-control" id="floatingInput"
+                            placeholder="Username">
+                        <label for="floatingInput">Username</label>
+                        <!-- #region usernameValid-->
+                        @if(usernameValid.valid){
+                        <div class="valid-feedback d-block ps-3">
+                            Looks good!
+                        </div>
+                        }
+                        @else if(usernameValid.err && usernameValid.err['minlength']){
+                        <div class="invalid-feedback d-block ps-3">
+                            Length >= 3
+                        </div>
+                        }
+                        @else if(feedbackFlag && usernameValid.err && usernameValid.err['required']){
+                        <div class="invalid-feedback d-block ps-3">
+                            Required!
+                        </div>
+                        }
+                        <!-- #endregion -->
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input formControlName="age" type="text" class="form-control" id="floatingPassword"
+                            placeholder="Age">
+                        <label for="floatingInput">Age</label>
+                        <!-- #region ageValid-->
+                        @if(ageValid.valid){
+                        <div class="valid-feedback d-block ps-3">
+                            Looks good!
+                        </div>
+                        }
+                        @else if(ageValid.err && ageValid.err['min']){
+                        <div class="invalid-feedback d-block ps-3">
+                            age >= 20
+                        </div>
+                        }
+                        @else if(ageValid.err && ageValid.err['max']){
+                        <div class="invalid-feedback d-block ps-3">
+                            age <= 50 </div>
+                                }
+                                @else if(feedbackFlag && ageValid.err && ageValid.err['required']){
+                                <div class="invalid-feedback d-block ps-3">
+                                    Required!
+                                </div>
+                                }
+                                <!-- #endregion -->
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input formControlName="address" type="text" class="form-control" id="floatingPassword"
+                                placeholder="Address">
+                            <label for="floatingInput">Address</label>
+                            <!-- #region addressValid-->
+                            @if(addressValid.valid){
+                            <div class="valid-feedback d-block ps-3">
+                                Looks good!
+                            </div>
+                            }
+                            @else if(addressValid.err && addressValid.err['maxlength']){
+                            <div class="invalid-feedback d-block ps-3">
+                                address length must be less than 100
+                            </div>
+                            }
+                            @else if(feedbackFlag && addressValid.err && addressValid.err['required']){
+                            <div class="invalid-feedback d-block ps-3">
+                                Required!
+                            </div>
+                            }
+                            <!-- #endregion -->
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
