@@ -1,9 +1,23 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-5 d-flex mx-auto mt-5 justify-content-center">
-                <p class="display-1">id: <span class="fw-bold text-primary">{{id}}</span></p>
-
+            <div class="col-md-10 mx-auto">
+                <table class="table table-bordered text-center table-light table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Username</th>
+                            <th>Age</th>
+                            <th>Address</th>
+                        </tr>
+                        <tr>
+                            <td>{{user?.id}}</td>
+                            <td>{{user?.username}}</td>
+                            <td>{{user?.age}}</td>
+                            <td>{{user?.address}}</td>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>

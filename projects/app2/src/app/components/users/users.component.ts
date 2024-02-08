@@ -1,13 +1,17 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { User } from '../../interfaces/User';
 import { UsersService } from '../../services/users.service';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink,
+    RouterModule
+  ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })

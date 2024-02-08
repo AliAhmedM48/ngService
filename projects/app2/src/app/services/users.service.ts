@@ -13,7 +13,12 @@ export class UsersService {
   usersListLength$ = this.usersListLengthSubject.asObservable();
 
   constructor() {
-    this.usersList = [];
+    this.usersList = [
+      // new User('Ali', 26, 'Suez'),
+      // new User('Ali', 26, 'Suez'),
+      // new User('Ali', 26, 'Suez'),
+      // new User('Ali', 26, 'Suez'),
+    ];
 
     this.updateUsersListLength();
   }
@@ -28,10 +33,13 @@ export class UsersService {
     return this.usersList;
   }
 
-  // getUserByID(userID: number): User | null {
-  //   let foundUser = this.usersList.find(user => user.id === userID);
-  //   return foundUser ? foundUser : null;
-  // }
+  getUserByID(userID: number): User | null {
+    let foundUser = this.usersList.find(user => +user.id === +userID);
+    console.log("list from users getbyID", foundUser);
+    console.log("list from users getbyID", this.usersList);
+
+    return foundUser ? foundUser : null;
+  }
 
   insertUser(newUser: User) {
     this.usersList.push(newUser);

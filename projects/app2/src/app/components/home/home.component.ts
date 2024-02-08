@@ -104,13 +104,22 @@ export class HomeComponent {
     }
     else {
       // alert('Congratulations! You have successfully registered.');
-      let user: User = {
+      let user: User = new User(
         // #region
-        username: this.regValidation.controls.username.value || 'default username',
-        age: this.regValidation.controls.age.value || 26,
-        address: this.regValidation.controls.address.value || 'default address',
+        this.regValidation.controls.username.value || 'default username',
+        this.regValidation.controls.age.value || 26,
+        this.regValidation.controls.address.value || 'default address',
         //#endregion
-      }
+      );
+
+
+      // let user: User = {
+      //   // #region
+      //   username: this.regValidation.controls.username.value || 'default username',
+      //   age: this.regValidation.controls.age.value || 26,
+      //   address: this.regValidation.controls.address.value || 'default address',
+      //   //#endregion
+      // }
 
       console.log("from home: ", user);
       // this.sendDataEvent.emit(user);
