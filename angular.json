@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs/app1",
+            "outputPath": "docs",
             "index": "projects/app1/src/index.html",
             "browser": "projects/app1/src/main.ts",
             "polyfills": [
@@ -131,7 +131,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs/app2",
+            "outputPath": {
+              "base": "docs",
+              "browser": ""
+            },
             "index": "projects/app2/src/index.html",
             "browser": "projects/app2/src/main.ts",
             "polyfills": [
