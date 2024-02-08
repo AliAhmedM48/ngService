@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
     <mat-toolbar class="bg-primary">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
@@ -19,4 +19,39 @@
             </div>
         </div>
     </mat-toolbar>
+</header> -->
+
+<header>
+
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container">
+            <a class="navbar-brand text-white" routerLink="home">My App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-5 px-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" routerLink="home" routerLinkActive="text-white"
+                            [routerLinkActiveOptions]="{exact:true}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" matBadge="{{usersQuantity}}" matBadgeSize="medium"
+                            routerLink="users" routerLinkActive="text-white"
+                            [routerLinkActiveOptions]="{exact:true}">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" routerLink="users/5" routerLinkActive="text-white"
+                            [routerLinkActiveOptions]="{exact:true}">User details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" routerLink="not-found" routerLinkActive="text-white"
+                            [routerLinkActiveOptions]="{exact:true}">error</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
